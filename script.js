@@ -27,7 +27,6 @@ buttonNumbers.forEach((nomor)=>{
         }
         numbTengah += tombol.target.innerText;
         displayMain.innerText = pisahAngka(numbTengah);
-        console.log(tombol.target.innerText);
     })
 });
 buttonOperations.forEach((operasi)=>{
@@ -44,8 +43,6 @@ buttonOperations.forEach((operasi)=>{
         }
         clearVariabel(namaOperasi);
         lastOperation = namaOperasi;
-
-        console.log(mtk.target.innerText);
     })
 });
 function clearVariabel(name = ""){
@@ -68,7 +65,6 @@ function fungsiMtk(){
     } else if(lastOperation === "%"){
         equal = parseFloat(equal) % parseFloat(numbTengah);
     }
-    console.log(equal)
 };
 buttonEqual.addEventListener('click', ()=>{
     if(!numbAtas || !numbTengah){
@@ -141,11 +137,11 @@ function clickOperation(key){
     })
 }
 function clickEqual(){
-    buttonEqual.click()
+    buttonEqual.click();
 }
 function clickClearLast(){
-    buttonClearLast.click()
+    buttonClearLast.click();
 }
 function clickClearAll(){
-    buttonClearAll.click()
+    buttonClearAll.click();
 }
