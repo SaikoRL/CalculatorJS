@@ -101,3 +101,51 @@ buttonClearLast.addEventListener('click', ()=>{
 function pisahAngka(angka){
     return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
 };
+window.addEventListener("keydown", (e)=>{
+    if(
+        e.key === "1" ||
+        e.key === "2" ||
+        e.key === "3" ||
+        e.key === "4" ||
+        e.key === "5" ||
+        e.key === "6" ||
+        e.key === "7" ||
+        e.key === "8" ||
+        e.key === "9" ||
+        e.key === "0"
+    ){
+        clickButton(e.key);
+    }else if(e.key === "+" ||e.key === "-" ||e.key === "/" ||e.key === "*" ||e.key === "%"){
+        clickOperation(e.key);
+    }else if(e.key === "=" || e.key === "Enter"){
+        clickEqual();
+    }else if(e.key === "Backspace"){
+        clickClearLast();
+    }else if(e.key === "Escape"){
+        clickClearAll();
+    }
+})
+
+function clickButton(key){
+    buttonNumbers.forEach((keyNomor)=>{
+        if(keyNomor.innerText === key){
+            keyNomor.click();
+        }
+    })
+}
+function clickOperation(key){
+    buttonOperations.forEach((keyOperation)=>{
+        if(keyOperation.innerText === key){
+            keyOperation.click();
+        }
+    })
+}
+function clickEqual(){
+    buttonEqual.click()
+}
+function clickClearLast(){
+    buttonClearLast.click()
+}
+function clickClearAll(){
+    buttonClearAll.click()
+}
